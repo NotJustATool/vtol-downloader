@@ -1,0 +1,22 @@
+[package]
+name = "vtol-downloader"
+authors = ["JustATool"]
+version = "1.0.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+steamworks = "0.9"
+yansi = "0.5"
+walkdir = "2.3"
+tokio = { version = "1.24", features = ["full"] }
+clap = { version = "4.0", features = ["derive"] }
+fs_extra = "1.2"
+
+[profile.release]
+strip = true
+opt-level = "z"
+lto = true
+codegen-units = 1
+panic = "abort"
